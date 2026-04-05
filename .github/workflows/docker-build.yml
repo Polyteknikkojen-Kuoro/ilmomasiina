@@ -2,16 +2,16 @@ name: Build & deploy
 
 env:
   # Change this to upload the built image to your own organization.
-  docker_tag: "ghcr.io/tietokilta/ilmomasiina"
+  docker_tag: "ghcr.io/Polyteknikkojen-Kuoro/ilmomasiina"
 
   # Change these to customize your build.
-  branding_header_title_text: "Tietokillan ilmomasiina"
+  branding_header_title_text: "PK:n Ilmomasiina"
   branding_header_title_text_short: "Ilmomasiina"
   branding_footer_gdpr_text: "Tietosuoja"
-  branding_footer_gdpr_link: "https://tietokilta.fi/fi/kilta/ilmorekisteri"
-  branding_footer_home_text: "Tietokilta.fi"
-  branding_footer_home_link: "https://tietokilta.fi"
-  branding_login_placeholder_email: "admin@tietokilta.fi"
+  branding_footer_gdpr_link: "https://polyteknikkojenkuoro.fi"
+  branding_footer_home_text: "Polyteknikkojen Kuoro"
+  branding_footer_home_link: "https://polyteknikkojenkuoro.fi"
+  branding_login_placeholder_email: "webmaster@polyteknikkojenkuoro.fi"
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
       packages: write
       contents: read
     # Change this to your repo name to build automatically on your fork.
-    if: github.repository == 'Tietokilta/ilmomasiina' && github.ref_type == 'tag'
+    if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref_type == 'tag'
     # If you want to build on a branch instead of tags, use the following instead (with your own branch name):
     # if: github.repository == 'Tietokilta/ilmomasiina' && github.ref == 'refs/heads/dev'
     steps:
