@@ -15,9 +15,8 @@ env:
 
 on:
   push:
-    tags: ["v*"]
     # If you want to build on a branch instead of tags, use the following instead (with your own branch name):
-    # branches: [dev]
+    branches: [2.x]
     # You'll likely also want to disable lint-test.yml running on the branch in that case, as it's redundant.
 
 jobs:
@@ -49,15 +48,15 @@ jobs:
   docker:
     name: Push Docker image to GitHub Packages
     # If you want to build on a branch instead of tags, remove packagejson from below (since there isn't a tag to check against).
-    needs: [lint, packagejson]
+    needs: [lint]
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     # Change this to your repo name to build automatically on your fork.
-    if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref_type == 'tag'
+    # if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref_type == 'tag'
     # If you want to build on a branch instead of tags, use the following instead (with your own branch name):
-    # if: github.repository == 'Tietokilta/ilmomasiina' && github.ref == 'refs/heads/dev'
+    if: github.repository == 'Tietokilta/ilmomasiina' && github.ref == 'refs/heads/2.x'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
