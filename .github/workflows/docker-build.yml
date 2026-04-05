@@ -56,7 +56,7 @@ jobs:
     # Change this to your repo name to build automatically on your fork.
     # if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref_type == 'tag'
     # If you want to build on a branch instead of tags, use the following instead (with your own branch name):
-    if: github.repository == 'Tietokilta/ilmomasiina' && github.ref == 'refs/heads/2.x'
+    if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref == 'refs/heads/2.x'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
