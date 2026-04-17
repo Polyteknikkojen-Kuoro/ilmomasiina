@@ -110,7 +110,7 @@ jobs:
   deploy:
     name: Push update to App Service
     needs: docker
-    if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref_type == 'tag' && startsWith(github.ref_name, 'v3.')
+    if: github.repository == 'Polyteknikkojen-Kuoro/ilmomasiina' && github.ref == 'refs/heads/2.x'
     runs-on: ubuntu-latest
     environment: production
     steps:
